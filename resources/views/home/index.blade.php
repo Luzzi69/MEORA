@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEORA | Redefine Your Natural Radiance</title>
+    <title>MÉORA | Redefine Your Natural Radiance</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,15 @@
                 extend: {
                     colors: {
                         meora: {
-                            bg: '#FAF6F0',
-                            card: '#F4ECE4',
-                            accent: '#D4A373',
-                            deep: '#8C533E',
-                            dark: '#2C221E',
-                            rose: '#E8B4B8',
-                            blush: '#FBE8E7',
-                            gold: '#C5A059',
-                            muted: '#6E6259'
+                            bg: '#FFF8F6',       /* Soft porcelain with warm red undertone */
+                            card: '#FADBD8',     /* Soft blush Papuan red card */
+                            accent: '#D93829',   /* Vibrant Papuan Fruit Red */
+                            deep: '#9B1B1B',     /* Rich Deep Crimson Papua Red */
+                            dark: '#2D0A0E',     /* Deep Mahogany Red-Black */
+                            rose: '#E54B4B',     /* Warm Papuan Crimson Highlight */
+                            blush: '#FCEBEB',    /* Light Rose Petal Wash */
+                            gold: '#D4A017',     /* Papuan Sun Gold Accent */
+                            muted: '#7A5458'     /* Muted Rosewood Charcoal */
                         }
                     },
                     fontFamily: {
@@ -37,9 +37,9 @@
                         sans: ['"Plus Jakarta Sans"', 'sans-serif']
                     },
                     boxShadow: {
-                        'glass': '0 8px 32px 0 rgba(140, 83, 62, 0.07)',
-                        'soft': '0 10px 30px -5px rgba(44, 34, 30, 0.05)',
-                        'luxury': '0 20px 40px -10px rgba(140, 83, 62, 0.12)'
+                        'glass': '0 8px 32px 0 rgba(155, 27, 27, 0.08)',
+                        'soft': '0 10px 30px -5px rgba(45, 10, 14, 0.06)',
+                        'luxury': '0 20px 40px -10px rgba(155, 27, 27, 0.16)'
                     }
                 }
             }
@@ -51,27 +51,27 @@
 
     <style>
         body {
-            background-color: #FAF6F0;
-            color: #2C221E;
+            background-color: #FFF8F6;
+            color: #2D0A0E;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
 
         .glass-nav {
-            background: rgba(250, 246, 240, 0.85);
+            background: rgba(255, 248, 246, 0.88);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 163, 115, 0.15);
+            border-bottom: 1px solid rgba(217, 56, 41, 0.15);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.85);
         }
 
         .hero-gradient {
-            background: linear-gradient(135deg, #FAF6F0 0%, #F3E8DF 50%, #E8D5C4 100%);
+            background: linear-gradient(135deg, #FFF8F6 0%, #FADBD8 50%, #F5B7B1 100%);
         }
 
         /* Custom Scrollbar */
@@ -79,14 +79,14 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #FAF6F0;
+            background: #FFF8F6;
         }
         ::-webkit-scrollbar-thumb {
-            background: #D4A373;
+            background: #D93829;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #8C533E;
+            background: #9B1B1B;
         }
 
         [x-cloak] { display: none !important; }
@@ -109,6 +109,7 @@
         </template>
     </div>
 
+    <!-- Announcement Bar -->
     <div class="bg-meora-dark text-meora-blush text-xs tracking-widest py-2.5 px-4 text-center font-medium uppercase relative overflow-hidden">
         <div class="flex items-center justify-center gap-2">
             <span class="inline-block w-1.5 h-1.5 rounded-full bg-meora-gold animate-pulse"></span>
@@ -138,8 +139,8 @@
 
                 <!-- Brand Logo -->
                 <div class="text-center">
-                    <a href="#" class="inline-block">
-                        <span class="font-serif text-3xl sm:text-4xl tracking-widest text-meora-dark font-normal">M E O R A</span>
+                    <a href="#" class="inline-block select-none">
+                        <span class="font-serif text-3xl sm:text-4xl tracking-widest text-meora-dark font-normal">M É O R A</span>
                         <span class="block text-[9px] tracking-[0.3em] uppercase text-meora-deep font-semibold -mt-1">Botanical Luxury</span>
                     </a>
                 </div>
@@ -178,7 +179,7 @@
     </header>
 
     <section id="home" class="relative hero-gradient overflow-hidden py-16 sm:py-24 lg:py-32">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#8C533E_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#9B1B1B_1px,transparent_1px)] [background-size:16px_16px]"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -196,7 +197,7 @@
                     </h1>
 
                     <p class="text-meora-muted text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-                        Formulated with rare botanical extracts and advanced bio-ferments. MEORA restores your skin's innate vitality with pure, potent, and sustainable luxury.
+                        Formulated with rare botanical extracts and advanced bio-ferments. MÉORA restores your skin's innate vitality with pure, potent, and sustainable luxury.
                     </p>
 
                     <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -411,7 +412,7 @@
 
                             <!-- Wishlist Button -->
                             <button @click="toggleWishlist(product)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-sm text-meora-dark flex items-center justify-center shadow-sm hover:bg-white transition-colors">
-                                <i :class="isWishlisted(product.id) ? 'fa-solid text-red-500' : 'fa-regular'" class="fa-heart"></i>
+                                <i :class="isWishlisted(product.id) ? 'fa-solid text-red-600' : 'fa-regular'" class="fa-heart"></i>
                             </button>
 
                             <!-- Quick View Hover Overlay -->
@@ -477,14 +478,14 @@
                 </div>
 
                 <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-meora-deep">The MEORA Philosophy</span>
+                    <span class="text-xs font-bold tracking-[0.25em] uppercase text-meora-deep">The MÉORA Philosophy</span>
                     <h2 class="font-serif text-4xl sm:text-5xl font-normal leading-tight text-meora-dark">
                         Pure Ingredients, <br>
                         <span class="italic font-light text-meora-deep">Honest Beauty Rituals</span>
                     </h2>
                     
                     <p class="text-meora-muted text-base leading-relaxed font-light">
-                        Founded with a mission to eliminate harsh synthetic additives, MEORA blends cold-pressed botanical oils, active peptides, and soothing floral waters. We believe that caring for your skin should be an intentional daily sanctuary.
+                        Founded with a mission to eliminate harsh synthetic additives, MÉORA blends cold-pressed botanical oils, active peptides, and soothing floral waters. We believe that caring for your skin should be an intentional daily sanctuary.
                     </p>
 
                     <div class="grid grid-cols-2 gap-6 pt-4 border-t border-meora-accent/20">
@@ -593,11 +594,11 @@
     </section>
 
     <section class="py-20 bg-meora-dark text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4A373_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D93829_1px,transparent_1px)] [background-size:20px_20px]"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
             <span class="text-xs font-bold tracking-[0.25em] uppercase text-meora-gold">Exclusive Membership</span>
-            <h2 class="font-serif text-4xl sm:text-5xl font-normal">Join the MEORA Glow Club</h2>
+            <h2 class="font-serif text-4xl sm:text-5xl font-normal">Join the MÉORA Glow Club</h2>
             <p class="text-meora-blush/80 text-sm sm:text-base font-light max-w-lg mx-auto">
                 Subscribe to receive private invitations to new product launches, expert skincare advice, and <strong>15% OFF</strong> your first order.
             </p>
@@ -608,7 +609,7 @@
                        placeholder="Enter your email address" 
                        required 
                        class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-meora-gold transition-colors">
-                <button type="submit" class="px-8 py-3.5 bg-meora-gold hover:bg-meora-accent text-meora-dark font-semibold text-xs tracking-widest uppercase rounded-full transition-all duration-300">
+                <button type="submit" class="px-8 py-3.5 bg-meora-accent hover:bg-meora-rose text-white font-semibold text-xs tracking-widest uppercase rounded-full transition-all duration-300">
                     Subscribe
                 </button>
             </form>
@@ -623,7 +624,7 @@
                 
                 <!-- Brand Column -->
                 <div class="lg:col-span-2 space-y-4">
-                    <span class="font-serif text-3xl tracking-widest text-white block">M E O R A</span>
+                    <span class="font-serif text-3xl tracking-widest text-white block select-none">M É O R A</span>
                     <p class="text-white/60 text-xs max-w-sm font-light leading-relaxed">
                         High-performance botanical skincare formulated for natural radiance and timeless beauty. Crafted with sustainability at heart.
                     </p>
@@ -674,7 +675,7 @@
             </div>
 
             <div class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40">
-                <p>&copy; 2026 MEORA Botanical Luxury. All rights reserved.</p>
+                <p>&copy; 2026 MÉORA Botanical Luxury. All rights reserved.</p>
                 <div class="flex items-center space-x-4 mt-4 sm:mt-0">
                     <i class="fa-brands fa-cc-visa text-base text-white/60"></i>
                     <i class="fa-brands fa-cc-mastercard text-base text-white/60"></i>
@@ -853,7 +854,7 @@
                                     Add To Bag
                                 </button>
                                 <button @click="toggleWishlist(selectedProduct)" class="w-12 h-12 rounded-full border border-meora-accent/30 flex items-center justify-center text-meora-dark hover:bg-meora-blush transition-colors">
-                                    <i :class="isWishlisted(selectedProduct.id) ? 'fa-solid text-red-500' : 'fa-regular'" class="fa-heart"></i>
+                                    <i :class="isWishlisted(selectedProduct.id) ? 'fa-solid text-red-600' : 'fa-regular'" class="fa-heart"></i>
                                 </button>
                             </div>
                         </div>
@@ -1043,7 +1044,8 @@
                 },
 
                 checkout() {
-                    alert('Order Summary:\nTotal Amount: ' + this.formatRupiah(this.cartSubtotal >= this.freeShippingThreshold ? this.cartSubtotal : this.cartSubtotal + 25000) + '\n\nSimulasi checkout berhasil! Hubungkan ke Payment Gateway (Midtrans) di controller Laravel.');
+                    const totalAmt = this.formatRupiah(this.cartSubtotal >= this.freeShippingThreshold ? this.cartSubtotal : this.cartSubtotal + 25000);
+                    this.showToast(`Checkout total: ${totalAmt}. Forwarding to payment gateway...`);
                 },
 
                 showToast(message) {
