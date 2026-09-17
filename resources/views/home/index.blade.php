@@ -95,6 +95,54 @@
 
 <body x-data="meoraStore()" x-init="initData()">
 
+    <!-- POPUP PROMO -->
+<div
+    x-show="promoOpen"
+    x-cloak
+    x-transition
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 px-4"
+>
+
+    <!-- Klik background untuk menutup -->
+    <div
+        @click="promoOpen = false"
+        class="absolute inset-0"
+    ></div>
+
+    <!-- BOX POPUP -->
+    <div
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-75"
+        x-transition:enter-end="opacity-100 scale-100"
+        class="relative z-10 w-full max-w-[650px]"
+    >
+
+        <!-- TOMBOL CLOSE -->
+        <button
+            @click="promoOpen = false"
+            type="button"
+            class="absolute -right-3 -top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white text-gray-800 shadow-lg hover:bg-black hover:text-white"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- BANNER PROMO -->
+        <a
+            href="#shop"
+            @click="promoOpen = false"
+            class="block"
+        >
+            <img
+                src="/images/promo-meora.jpg"
+                alt="Promo MEORA"
+                class="w-full rounded-lg shadow-2xl"
+            >
+        </a>
+
+    </div>
+
+</div>
+
     <!-- Toast Notification Container -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
         <template x-for="toast in toasts" :key="toast.id">
@@ -871,6 +919,7 @@
                 cartDrawerOpen: false,
                 quickViewOpen: false,
                 searchOpen: false,
+                promoOpen: false,
                 activeTab: 'all',
                 newsletterEmail: '',
                 freeShippingThreshold: 500000,
@@ -963,7 +1012,9 @@
                 ],
 
                 initData() {
-                    // Logic initialize if needed
+                    setTimeout(() => {
+                        this.promoOpen = true;
+                    }, 1000);
                 },
 
                 get filteredProducts() {
