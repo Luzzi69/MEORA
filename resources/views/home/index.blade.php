@@ -49,6 +49,11 @@
     <!-- Alpine.js CDN for dynamic cart & interactive state -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
     <style>
         body {
             background-color: #FFF8F6;
@@ -72,6 +77,95 @@
 
         .hero-gradient {
             background: linear-gradient(135deg, #FFF8F6 0%, #FADBD8 50%, #F5B7B1 100%);
+        }
+
+        /* =========================================
+           3D PRODUCT HERO
+           ========================================= */
+
+        .product-3d-stage {
+            perspective: 1200px;
+        }
+
+        .product-3d {
+            transform-style: preserve-3d;
+            animation: productFloat 5s ease-in-out infinite;
+            filter:
+                drop-shadow(0 35px 25px rgba(45, 10, 14, 0.20))
+                drop-shadow(0 10px 10px rgba(155, 27, 27, 0.10));
+            transition:
+                transform 0.5s ease,
+                filter 0.5s ease;
+        }
+
+        .product-3d:hover {
+            animation-play-state: paused;
+            transform:
+                translateY(-10px)
+                rotateY(-8deg)
+                rotateX(3deg)
+                scale(1.04);
+            filter:
+                drop-shadow(0 45px 30px rgba(45, 10, 14, 0.25))
+                drop-shadow(0 15px 15px rgba(155, 27, 27, 0.12));
+        }
+
+        .meora-product-3d {
+            width: 100%;
+            height: 400px;
+            max-width: 350px;
+            background: transparent;
+            --poster-color: transparent;
+        }
+
+        .meora-product-3d::part(default-progress-bar) {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .meora-product-3d {
+                height: 650px;
+                max-width: 550px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .meora-product-3d {
+                height: 480px;
+            }
+        }
+
+        @keyframes productFloat {
+            0%, 100% {
+                transform: translateY(0) rotateY(-4deg) rotateZ(1deg);
+            }
+            50% {
+                transform: translateY(-18px) rotateY(4deg) rotateZ(-1deg);
+            }
+        }
+
+        .product-shadow {
+            animation: productShadow 5s ease-in-out infinite;
+        }
+
+        @keyframes productShadow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.22;
+            }
+            50% {
+                transform: scale(0.82);
+                opacity: 0.12;
+            }
+        }
+
+        .product-orbit {
+            animation: productOrbit 12s linear infinite;
+        }
+
+        @keyframes productOrbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         /* Custom Scrollbar */
@@ -270,31 +364,74 @@
                     </div>
                 </div>
 
-                <!-- Hero Image Visual Stack -->
-                <div class="lg:col-span-6 relative flex justify-center">
-                    <div class="relative w-full max-w-md lg:max-w-none">
-                        <!-- Main Beauty Image -->
-                        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1200&auto=format&fit=crop" 
-                                 alt="MEORA Glowing Skin" 
-                                 class="w-full h-[460px] sm:h-[540px] object-cover hover:scale-105 transition-transform duration-700">
+                <!-- Hero 3D Product Visual -->
+                <div class="lg:col-span-6 relative flex justify-center items-center">
+                    <div class="relative w-full max-w-xl min-h-[500px] sm:min-h-[580px] flex items-center justify-center product-3d-stage">
+
+                        <!-- Background Glow -->
+                        <div class="absolute w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[460px] lg:h-[460px] rounded-full bg-meora-rose/30 blur-3xl z-0"></div>
+
+                        <!-- Soft Gold Glow -->
+                        <div class="absolute w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] rounded-full bg-meora-gold/20 blur-3xl translate-x-16 translate-y-20 z-0"></div>
+
+                        <!-- Decorative Orbit -->
+                        <div class="absolute w-[330px] h-[330px] sm:w-[430px] sm:h-[430px] lg:w-[500px] lg:h-[500px] rounded-full border border-meora-deep/15 product-orbit z-0">
+                            <div class="absolute top-1/2 -right-2 w-4 h-4 rounded-full bg-meora-gold shadow-lg"></div>
                         </div>
 
-                        <!-- Floating Product Card Badge -->
-                        <div class="absolute -bottom-6 -left-6 z-20 glass-card p-4 rounded-xl shadow-luxury max-w-[220px] hidden sm:block animate-bounce-slight">
-                            <div class="flex items-center gap-3">
-                                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-lg object-cover">
-                                <div>
-                                    <p class="text-xs font-bold text-meora-dark">Rose Elixir Serum</p>
-                                    <p class="text-[11px] text-meora-deep font-semibold">Rp 385.000</p>
-                                    <div class="text-[10px] text-meora-gold">★★★★★ (482)</div>
-                                </div>
+                        <!-- Second Orbit -->
+                        <div class="absolute w-[250px] h-[250px] sm:w-[330px] sm:h-[330px] lg:w-[390px] lg:h-[390px] rounded-full border border-meora-accent/10 -rotate-12 z-0">
+                            <div class="absolute top-8 left-1/2 w-3 h-3 rounded-full bg-meora-deep/50"></div>
+                        </div>
+
+                        <!-- Decorative Sparkles -->
+                        <div class="absolute top-16 left-8 sm:left-12 text-meora-gold text-3xl z-20 animate-pulse">✦</div>
+                        <div class="absolute top-28 right-8 sm:right-12 text-meora-deep text-xl z-20">✧</div>
+                        <div class="absolute bottom-24 left-10 text-meora-rose text-2xl z-20 animate-pulse">✦</div>
+                        <div class="absolute bottom-16 right-10 sm:right-20 text-meora-gold text-3xl z-20">✧</div>
+
+                        <!-- Floating Small Circles -->
+                        <div class="absolute top-20 right-20 w-5 h-5 rounded-full bg-meora-gold/70 shadow-lg z-20"></div>
+                        <div class="absolute bottom-32 left-16 w-4 h-4 rounded-full bg-meora-accent/50 z-20"></div>
+
+                        <!-- Product Shadow -->
+                        <div class="product-shadow absolute bottom-20 w-[180px] sm:w-[250px] h-[35px] sm:h-[50px] rounded-full bg-meora-dark/30 blur-2xl z-0"></div>
+
+                        <!-- Main 3D Product -->
+                        <div class="relative z-10 product-3d flex items-center justify-center w-[270px] sm:w-[330px] lg:w-[400px]">
+                            <model-viewer
+                                src="/models/spray.glb"
+                                alt="MEORA Summer Bloom Deodorant Spray"
+                                camera-controls
+                                auto-rotate
+                                auto-rotate-delay="1000"
+                                rotation-per-second="20deg"
+                                shadow-intensity="1"
+                                shadow-softness="1"
+                                exposure="1.1"
+                                environment-image="neutral"
+                                camera-orbit="0deg 75deg 2.5m"
+                                class="meora-product-3d">
+                            </model-viewer>
+                        </div>
+
+                        <!-- Product Label -->
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 glass-card px-5 py-3 rounded-full shadow-luxury flex items-center gap-3 whitespace-nowrap">
+                            <div class="w-9 h-9 rounded-full bg-meora-dark text-meora-gold flex items-center justify-center">
+                                <i class="fa-solid fa-spray-can-sparkles text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-meora-muted">Featured Product</p>
+                                <p class="text-sm font-bold text-meora-dark">Summer Bloom</p>
                             </div>
                         </div>
 
-                        <!-- Decorative Accent Circle -->
-                        <div class="absolute -top-10 -right-10 w-48 h-48 bg-meora-rose/40 rounded-full blur-2xl z-0"></div>
-                        <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-meora-gold/20 rounded-full blur-3xl z-0"></div>
+                        <!-- Top Floating Badge -->
+                        <div class="absolute top-10 right-2 sm:right-8 lg:right-12 z-30 bg-meora-dark text-white px-4 py-3 rounded-2xl shadow-luxury rotate-6">
+                            <p class="text-[9px] uppercase tracking-widest text-meora-gold">Natural</p>
+                            <p class="font-serif text-lg">Summer Bloom</p>
+                        </div>
+
                     </div>
                 </div>
 
